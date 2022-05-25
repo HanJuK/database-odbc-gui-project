@@ -7,6 +7,7 @@
 #include "database-odbc-gui-project.h"
 #include "database-odbc-gui-projectDlg.h"
 #include "afxdialogex.h"
+#include "CSchemaCheckDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -31,6 +32,7 @@ void CdatabaseodbcguiprojectDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CdatabaseodbcguiprojectDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(BUTTON_SCHEMA_CHECK, &CdatabaseodbcguiprojectDlg::OnBnClickedSchemaCheck)
 END_MESSAGE_MAP()
 
 
@@ -86,3 +88,10 @@ HCURSOR CdatabaseodbcguiprojectDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CdatabaseodbcguiprojectDlg::OnBnClickedSchemaCheck()
+{
+	CSchemaCheckDlg dlg;
+	dlg.DoModal();
+}
