@@ -1,5 +1,4 @@
 ﻿  CSchemaCheckDlg.cpp
-  database-odbc-gui-project.cpp
-  database-odbc-gui-projectDlg.cpp
-  Generating Code...
+C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\ODBC.h(65,41): warning C4042: 'query': has bad storage class
+C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\ODBC.h(106): warning C4172: returning address of local variable or temporary: result
   database-odbc-gui-project.vcxproj -> C:\Android\Projects-nonAndroid\database-odbc-gui-project\x64\Debug\database-odbc-gui-project.exe
