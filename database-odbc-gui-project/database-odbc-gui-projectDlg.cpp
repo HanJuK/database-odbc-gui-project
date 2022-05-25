@@ -45,7 +45,7 @@ BOOL CdatabaseodbcguiprojectDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	// TODO: Add extra initialization here
+	ModifyStyle(NULL, WS_SYSMENU);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
