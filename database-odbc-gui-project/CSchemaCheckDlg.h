@@ -26,4 +26,5 @@ protected:
 public:
 	CComboBox m_comboTable;
 	CListCtrl m_listSchema;
+	afx_msg void OnCbnSelchangeComboTable();
 };
