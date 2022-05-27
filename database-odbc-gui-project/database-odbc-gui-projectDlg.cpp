@@ -9,6 +9,7 @@
 #include "afxdialogex.h"
 #include "CSchemaCheckDlg.h"
 #include "CSelectQueryDlg.h"
+#include "CInsertQueryDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -35,6 +36,7 @@ BEGIN_MESSAGE_MAP(CdatabaseodbcguiprojectDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(BUTTON_SCHEMA_CHECK, &CdatabaseodbcguiprojectDlg::OnBnClickedSchemaCheck)
 	ON_BN_CLICKED(BUTTON_SELECT_QUERY, &CdatabaseodbcguiprojectDlg::OnBnClickedSelectQuery)
+	ON_BN_CLICKED(IDC_BUTTON_INSERT_QUERY, &CdatabaseodbcguiprojectDlg::OnBnClickedButtonInsertQuery)
 END_MESSAGE_MAP()
 
 
@@ -102,5 +104,12 @@ void CdatabaseodbcguiprojectDlg::OnBnClickedSchemaCheck()
 void CdatabaseodbcguiprojectDlg::OnBnClickedSelectQuery()
 {
 	CSelectQueryDlg dlg;
+	dlg.DoModal();
+}
+
+
+void CdatabaseodbcguiprojectDlg::OnBnClickedButtonInsertQuery()
+{
+	CInsertQueryDlg dlg;
 	dlg.DoModal();
 }

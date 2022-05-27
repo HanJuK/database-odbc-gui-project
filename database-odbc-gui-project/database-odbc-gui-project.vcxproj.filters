@@ -51,6 +51,15 @@
     <ClInclude Include="CSelectQueryDlgTab2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CInsertQueryDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CInsertQueryDlgTab1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CInsertQueryDlgTab2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="database-odbc-gui-project.cpp">
@@ -72,6 +81,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CSelectQueryDlgTab2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CInsertQueryDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CInsertQueryDlgTab1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CInsertQueryDlgTab2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

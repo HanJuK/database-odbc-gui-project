@@ -186,6 +186,9 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CInsertQueryDlg.h" />
+    <ClInclude Include="CInsertQueryDlgTab1.h" />
+    <ClInclude Include="CInsertQueryDlgTab2.h" />
     <ClInclude Include="CSchemaCheckDlg.h" />
     <ClInclude Include="CSelectQueryDlg.h" />
     <ClInclude Include="CSelectQueryDlgTab1.h" />
@@ -200,6 +203,9 @@
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CInsertQueryDlg.cpp" />
+    <ClCompile Include="CInsertQueryDlgTab1.cpp" />
+    <ClCompile Include="CInsertQueryDlgTab2.cpp" />
     <ClCompile Include="CSchemaCheckDlg.cpp" />
     <ClCompile Include="CSelectQueryDlg.cpp" />
     <ClCompile Include="CSelectQueryDlgTab1.cpp" />
