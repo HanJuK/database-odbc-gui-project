@@ -100,7 +100,7 @@ void CSchemaCheckDlg::OnCbnSelchangeComboTable()
 		std::vector<std::string> resultLine = Util::splitString(result, '\n');
 		for (int i = 0; i < resultLine.size(); ++i)
 		{
-			std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], ' ');
+			std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
 
 			int nItem;
 			nItem = m_listSchema.InsertItem(i, resultLineColumn[0].c_str());

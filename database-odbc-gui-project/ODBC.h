@@ -82,6 +82,10 @@ public:
 				sprintf(result + strlen(result), "%s\n", tableName);
 			}
 		}
+		else
+		{
+			// TODO: handle error
+		}
 
 		return result;
 	}
@@ -121,10 +125,54 @@ public:
 					&columnDataNullable[i]
 				);
 
-				sprintf(result + strlen(result), "%s %d %d %d %d\n",
+				sprintf(result + strlen(result), "%s|%d|%d|%d|%d\n",
 						columnName[i], (int)columnNameLen[i], (int)columnDataType[i],
 						(int)columnDataSize[i], (int)columnDataNullable[i]);
 			}
+		}
+		else
+		{
+			// TODO: handle error
+		}
+
+		return result;
+	}
+
+	char* getSelectQueryResult(static char* query)
+	{
+		char result[10000] = { '\0' };
+
+		SQLCHAR querySQL[1000]; // query statement for SQL
+		SQLHSTMT hStmt; // statement handle
+
+		if (SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt) == SQL_SUCCESS)
+		{
+			SQLSMALLINT colCount = -1;
+			SQLCHAR data[100][50];
+			SQLLEN nulldata[100];
+
+			sprintf((char*)querySQL, query);
+			SQLExecDirect(hStmt, querySQL, SQL_NTS);
+
+			SQLNumResultCols(hStmt, &colCount);
+			for (int i = 0; i < colCount; ++i)
+			{
+				SQLBindCol(hStmt, i + 1, SQL_C_CHAR, data[i], sizeof(data[i]), &(nulldata[i]));
+			}
+
+			while (SQLFetch(hStmt) != SQL_NO_DATA)
+			{
+				for (int i = 0; i < colCount; ++i)
+				{
+					if (nulldata[i] == SQL_NULL_DATA) sprintf(result + strlen(result), "NULL|");
+					else sprintf(result + strlen(result), "%s|", data[i]);
+				}
+				sprintf(result + strlen(result), "\n");
+			}
+		}
+		else
+		{
+			// TODO: handle error
 		}
 
 		return result;

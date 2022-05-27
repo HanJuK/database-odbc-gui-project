@@ -41,8 +41,8 @@ BOOL CSelectQueryDlg::OnInitDialog()
 {
 	UpdateData(false);
 
-	m_tabScenario.InsertItem(0, _T("Scenario 1"));
-	m_tabScenario.InsertItem(1, _T("Scenario 2"));
+	m_tabScenario.InsertItem(0, _T("Scenario 1, 2"));
+	m_tabScenario.InsertItem(1, _T("Scenario 3"));
 	m_tabScenario.SetCurSel(0);
 
 	CRect rect;

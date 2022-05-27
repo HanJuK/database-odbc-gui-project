@@ -20,5 +20,12 @@ public:
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
+	virtual BOOL OnInitDialog();
+
 	DECLARE_MESSAGE_MAP()
+public:
+	CListCtrl m_listCustomer;
+	afx_msg void OnBnClickedButtonQuery();
+	CEdit m_editEmployeeId;
+	CListCtrl m_listCustomPC;
 };
