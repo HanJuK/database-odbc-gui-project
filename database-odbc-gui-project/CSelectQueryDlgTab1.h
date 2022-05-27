@@ -24,8 +24,8 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
-	CListCtrl m_listCustomer;
-	afx_msg void OnBnClickedButtonQuery();
 	CEdit m_editEmployeeId;
+	afx_msg void OnBnClickedButtonQuery();
+	CListCtrl m_listCustomer;
 	CListCtrl m_listCustomPC;
 };
