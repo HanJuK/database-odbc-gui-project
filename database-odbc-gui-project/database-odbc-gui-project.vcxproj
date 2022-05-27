@@ -187,6 +187,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CSchemaCheckDlg.h" />
+    <ClInclude Include="CSelectQueryDlg.h" />
+    <ClInclude Include="CSelectQueryDlgTab1.h" />
+    <ClInclude Include="CSelectQueryDlgTab2.h" />
     <ClInclude Include="database-odbc-gui-project.h" />
     <ClInclude Include="database-odbc-gui-projectDlg.h" />
     <ClInclude Include="framework.h" />
@@ -198,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CSchemaCheckDlg.cpp" />
+    <ClCompile Include="CSelectQueryDlg.cpp" />
+    <ClCompile Include="CSelectQueryDlgTab1.cpp" />
+    <ClCompile Include="CSelectQueryDlgTab2.cpp" />
     <ClCompile Include="database-odbc-gui-project.cpp" />
     <ClCompile Include="database-odbc-gui-projectDlg.cpp" />
     <ClCompile Include="pch.cpp">
