@@ -43,12 +43,28 @@ BOOL CSchemaCheckDlg::OnInitDialog()
 {
 	UpdateData(false);
 
-	m_comboTable.AddString(_T("EMPLOYEE"));
-	m_comboTable.AddString(_T("CUSTOMER"));
-	m_comboTable.AddString(_T("PURCHASE"));
-	m_comboTable.AddString(_T("CUSTOM_PC"));
-	m_comboTable.AddString(_T("PART"));
-	m_comboTable.AddString(_T("PARTNER"));
+	ODBC* odbc = new ODBC();
+
+	if (odbc->DBConnect())
+	{
+		char* result;
+		char query[50] = "select TABLE_NAME from INFORMATION_SCHEMA.TABLES";
+
+		result = odbc->getTableNames(query);
+		std::vector<std::string> resultLine = Util::splitString(result, '\n');
+
+		for (int i = 0; i < resultLine.size(); ++i)
+		{
+			m_comboTable.AddString(_T(resultLine[i].c_str()));
+		}
+	}
+	else
+	{
+		// TODO: handle exception
+	}
+
+	odbc->DBDisconnect();
+	delete odbc;
 
 	m_listSchema.InsertColumn(0, _T("Column Name"), LVCFMT_LEFT, 100);
 	m_listSchema.InsertColumn(1, _T("Column Name Length"), LVCFMT_LEFT, 100);
@@ -68,7 +84,7 @@ void CSchemaCheckDlg::OnCbnSelchangeComboTable()
 	if (odbc->DBConnect())
 	{
 		char* result;
-		char query[30] = "select * from ", table[10];
+		char query[50] = "select * from ", table[30];
 
 		m_comboTable.GetLBText(m_comboTable.GetCurSel(), table);
 		strcat(query, table);

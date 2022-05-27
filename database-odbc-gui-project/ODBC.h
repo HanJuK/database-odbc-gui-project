@@ -62,6 +62,30 @@ public:
 		return;
 	}
 
+	char* getTableNames(static char* query)
+	{
+		char result[10000] = { '\0' };
+
+		SQLCHAR querySQL[100]; // query statement for SQL
+		SQLHSTMT hStmt; // statement handle
+
+		if (SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt) == SQL_SUCCESS)
+		{
+			SQLCHAR tableName[50];
+
+			sprintf((char*)querySQL, query);
+			SQLExecDirect(hStmt, querySQL, SQL_NTS);
+
+			SQLBindCol(hStmt, 1, SQL_C_CHAR, tableName, 50, NULL);
+			while (SQLFetch(hStmt) != SQL_NO_DATA)
+			{
+				sprintf(result + strlen(result), "%s\n", tableName);
+			}
+		}
+
+		return result;
+	}
+
 	char* getDescribeCol(static char* query)
 	{
 		char result[10000] = { '\0' };
@@ -71,12 +95,12 @@ public:
 
 		if (SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt) == SQL_SUCCESS)
 		{
-			SQLCHAR ColumnName[50][50];
-			SQLSMALLINT ColumnNameLen[50];
-			SQLSMALLINT ColumnDataType[50];
-			SQLULEN ColumnDataSize[50];
-			SQLSMALLINT ColumnDataDigits[50];
-			SQLSMALLINT ColumnDataNullable[50];
+			SQLCHAR columnName[50][50];
+			SQLSMALLINT columnNameLen[50];
+			SQLSMALLINT columnDataType[50];
+			SQLULEN columnDataSize[50];
+			SQLSMALLINT columnDataDigits[50];
+			SQLSMALLINT columnDataNullable[50];
 			SQLSMALLINT numCols = -1;
 
 			sprintf((char*)querySQL, query);
@@ -88,18 +112,18 @@ public:
 				SQLDescribeCol(
 					hStmt,
 					i + 1,
-					ColumnName[i],
+					columnName[i],
 					50,
-					&ColumnNameLen[i],
-					&ColumnDataType[i],
-					&ColumnDataSize[i],
-					&ColumnDataDigits[i],
-					&ColumnDataNullable[i]
+					&columnNameLen[i],
+					&columnDataType[i],
+					&columnDataSize[i],
+					&columnDataDigits[i],
+					&columnDataNullable[i]
 				);
 
 				sprintf(result + strlen(result), "%s %d %d %d %d\n",
-						ColumnName[i], (int)ColumnNameLen[i], (int)ColumnDataType[i],
-						(int)ColumnDataSize[i], (int)ColumnDataNullable[i]);
+						columnName[i], (int)columnNameLen[i], (int)columnDataType[i],
+						(int)columnDataSize[i], (int)columnDataNullable[i]);
 			}
 		}
 
