@@ -118,10 +118,10 @@ void CDeleteQueryDlgTab1::OnBnClickedButtonQuery()
 		m_editName.GetWindowTextA(name);
 
 		sprintf(query1 + strlen(query1), "delete from CUSTOM_PC where NAME = '%s'", name);
-		odbc->doInsertQuery(query1);
+		odbc->doInsertDeleteUpdateQuery(query1);
 
 		sprintf(query2 + strlen(query2), "update PURCHASE set CUSTOM_PC_NAME = NULL where CUSTOM_PC_NAME = '%s'", name);
-		odbc->doInsertQuery(query2);
+		odbc->doInsertDeleteUpdateQuery(query2);
 
 		result = odbc->getSelectQueryResult(query3);
 

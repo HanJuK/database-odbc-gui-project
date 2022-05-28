@@ -72,7 +72,7 @@ void CInsertQueryDlgTab2::OnBnClickedButtonQuery()
 
 		sprintf(query + strlen(query), "insert into CUSTOMER values(%s, '%s', '%s', '%s', '%s', %s, %s, %s)",
 				id, name, phone, email, address, mileage, marketing, managerEmployeeId);
-		odbc->doInsertQuery(query);
+		odbc->doInsertDeleteUpdateQuery(query);
 	}
 	else
 	{

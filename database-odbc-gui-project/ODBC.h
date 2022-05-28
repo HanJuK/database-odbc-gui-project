@@ -187,7 +187,7 @@ public:
 		return result;
 	}
 
-	void doInsertQuery(static char* query)
+	void doInsertDeleteUpdateQuery(static char* query)
 	{
 		SQLCHAR querySQL[1000]; // query statement for SQL
 		SQLHSTMT hStmt; // statement handle
