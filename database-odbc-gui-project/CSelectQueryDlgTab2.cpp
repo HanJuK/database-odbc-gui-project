@@ -65,7 +65,7 @@ void CSelectQueryDlgTab2::OnBnClickedButtonQuery()
 		char query[1000] = "select C.NAME, C.PRICE, C.AVAILABILITY, C.TYPE, "
 			"(C.RATING_SUM * 1.0) / NULLIF(C.RATING_COUNT, 0) as RATING, C.BUILDER_EMPLOYEE_ID "
 			"from CUSTOM_PC as C "
-			"order by RATING desc ";
+			"order by RATING desc";
 		int itemCount;
 		std::vector<std::string> resultLine;
 

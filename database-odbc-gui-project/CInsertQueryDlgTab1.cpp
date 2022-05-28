@@ -70,7 +70,6 @@ void CInsertQueryDlgTab1::OnBnClickedButtonQuery()
 
 		sprintf(query + strlen(query), "insert into EMPLOYEE values(%s, '%s', '%s', '%s', '%s', %s, %s)",
 				id, name, phone, department, role, salary, superiorEmployeeId);
-
 		odbc->doInsertQuery(query);
 	}
 	else

@@ -10,6 +10,7 @@
 #include "CSchemaCheckDlg.h"
 #include "CSelectQueryDlg.h"
 #include "CInsertQueryDlg.h"
+#include "CDeleteQueryDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -37,6 +38,7 @@ BEGIN_MESSAGE_MAP(CdatabaseodbcguiprojectDlg, CDialogEx)
 	ON_BN_CLICKED(BUTTON_SCHEMA_CHECK, &CdatabaseodbcguiprojectDlg::OnBnClickedSchemaCheck)
 	ON_BN_CLICKED(BUTTON_SELECT_QUERY, &CdatabaseodbcguiprojectDlg::OnBnClickedSelectQuery)
 	ON_BN_CLICKED(IDC_BUTTON_INSERT_QUERY, &CdatabaseodbcguiprojectDlg::OnBnClickedButtonInsertQuery)
+	ON_BN_CLICKED(IDC_BUTTON_DELETE_QUERY, &CdatabaseodbcguiprojectDlg::OnBnClickedButtonDeleteQuery)
 END_MESSAGE_MAP()
 
 
@@ -111,5 +113,12 @@ void CdatabaseodbcguiprojectDlg::OnBnClickedSelectQuery()
 void CdatabaseodbcguiprojectDlg::OnBnClickedButtonInsertQuery()
 {
 	CInsertQueryDlg dlg;
+	dlg.DoModal();
+}
+
+
+void CdatabaseodbcguiprojectDlg::OnBnClickedButtonDeleteQuery()
+{
+	CDeleteQueryDlg dlg;
 	dlg.DoModal();
 }

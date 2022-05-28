@@ -34,4 +34,5 @@ public:
 	afx_msg void OnBnClickedSchemaCheck();
 	afx_msg void OnBnClickedSelectQuery();
 	afx_msg void OnBnClickedButtonInsertQuery();
+	afx_msg void OnBnClickedButtonDeleteQuery();
 };
