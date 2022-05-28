@@ -25,4 +25,5 @@ public:
 	CEdit m_editQuery;
 	CButton m_buttonQuery;
 	CListCtrl m_listResult;
+	afx_msg void OnBnClickedButtonQuery();
 };

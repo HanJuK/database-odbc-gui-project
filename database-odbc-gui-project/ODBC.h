@@ -154,7 +154,7 @@ public:
 		if (SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt) == SQL_SUCCESS)
 		{
 			SQLSMALLINT colCount = -1;
-			SQLCHAR data[100][50];
+			SQLCHAR data[100][500];
 			SQLLEN nulldata[100];
 
 			sprintf((char*)querySQL, query);
