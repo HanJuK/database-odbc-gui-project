@@ -19,6 +19,14 @@ public:
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	
+	virtual BOOL OnInitDialog();
 
 	DECLARE_MESSAGE_MAP()
+public:
+	CEdit m_editId;
+	CEdit m_editSuperiorEmployeeId;
+	CButton m_buttonQuery;
+	CListCtrl m_listEmployee;
+	afx_msg void OnBnClickedButtonQuery();
 };
