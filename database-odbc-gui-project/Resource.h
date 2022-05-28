@@ -26,7 +26,9 @@
 #define IDC_BUTTON_QUERY                1015
 #define IDC_BUTTON1                     1016
 #define IDC_BUTTON_INSERT_QUERY         1016
+#define IDC_BUTTON_VIEW_PURCHASED       1016
 #define IDC_LIST1                       1017
+#define IDC_LIST_PURCHASE               1017
 #define IDC_STATIC_ID                   1018
 #define IDC_EDIT_ID                     1019
 #define IDC_STATIC_NAME                 1020
@@ -52,7 +54,8 @@
 #define IDC_STATIC_MANAGER_EMPLOYEE_ID  1043
 #define IDC_EDIT_MANAGER_EMPLOYEE_ID    1044
 #define IDC_BUTTON_DELETE_QUERY         1045
-#define IDC_EDIT1                       1046
+#define IDC_EDIT_DATETIME               1048
+#define IDC_BUTTON_DATETIME             1049
 
 // Next default values for new objects
 // 
@@ -60,7 +63,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        154
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1047
+#define _APS_NEXT_CONTROL_VALUE         1050
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
