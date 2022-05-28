@@ -160,6 +160,9 @@ void CDeleteQueryDlgTab1::OnBnClickedButtonQuery()
 		{
 			// TODO: handle exception
 		}
+
+		odbc3->DBDisconnect();
+		delete odbc3;
 	}
 	else
 	{
