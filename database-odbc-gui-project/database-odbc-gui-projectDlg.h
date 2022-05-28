@@ -36,4 +36,5 @@ public:
 	afx_msg void OnBnClickedButtonInsertQuery();
 	afx_msg void OnBnClickedButtonDeleteQuery();
 	afx_msg void OnBnClickedButtonUpdateQuery();
+	afx_msg void OnBnClickedButtonCustomQuery();
 };

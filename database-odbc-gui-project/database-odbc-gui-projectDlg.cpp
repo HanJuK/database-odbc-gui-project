@@ -12,6 +12,7 @@
 #include "CInsertQueryDlg.h"
 #include "CDeleteQueryDlg.h"
 #include "CUpdateQueryDlg.h"
+#include "CCustomQueryDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -41,6 +42,7 @@ BEGIN_MESSAGE_MAP(CdatabaseodbcguiprojectDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_INSERT_QUERY, &CdatabaseodbcguiprojectDlg::OnBnClickedButtonInsertQuery)
 	ON_BN_CLICKED(IDC_BUTTON_DELETE_QUERY, &CdatabaseodbcguiprojectDlg::OnBnClickedButtonDeleteQuery)
 	ON_BN_CLICKED(IDC_BUTTON_UPDATE_QUERY, &CdatabaseodbcguiprojectDlg::OnBnClickedButtonUpdateQuery)
+	ON_BN_CLICKED(IDC_BUTTON_CUSTOM_QUERY, &CdatabaseodbcguiprojectDlg::OnBnClickedButtonCustomQuery)
 END_MESSAGE_MAP()
 
 
@@ -129,5 +131,12 @@ void CdatabaseodbcguiprojectDlg::OnBnClickedButtonDeleteQuery()
 void CdatabaseodbcguiprojectDlg::OnBnClickedButtonUpdateQuery()
 {
 	CUpdateQueryDlg dlg;
+	dlg.DoModal();
+}
+
+
+void CdatabaseodbcguiprojectDlg::OnBnClickedButtonCustomQuery()
+{
+	CCustomQueryDlg dlg;
 	dlg.DoModal();
 }
