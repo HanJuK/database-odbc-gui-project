@@ -66,7 +66,7 @@ public:
 	{
 		char result[10000] = { '\0' };
 
-		SQLCHAR querySQL[100]; // query statement for SQL
+		SQLCHAR querySQL[1000]; // query statement for SQL
 		SQLHSTMT hStmt; // statement handle
 
 		if (SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt) == SQL_SUCCESS)
@@ -97,7 +97,7 @@ public:
 	{
 		char result[10000] = { '\0' };
 
-		SQLCHAR querySQL[100]; // query statement for SQL
+		SQLCHAR querySQL[1000]; // query statement for SQL
 		SQLHSTMT hStmt; // statement handle
 
 		if (SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt) == SQL_SUCCESS)
