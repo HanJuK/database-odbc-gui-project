@@ -69,6 +69,15 @@
     <ClInclude Include="CDeleteQueryDlgTab2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CUpdateQueryDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CUpdateQueryDlgTab1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CUpdateQueryDlgTab2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="database-odbc-gui-project.cpp">
@@ -108,6 +117,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CDeleteQueryDlgTab2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CUpdateQueryDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CUpdateQueryDlgTab1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CUpdateQueryDlgTab2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

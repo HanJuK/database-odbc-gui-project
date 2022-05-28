@@ -196,6 +196,9 @@
     <ClInclude Include="CSelectQueryDlg.h" />
     <ClInclude Include="CSelectQueryDlgTab1.h" />
     <ClInclude Include="CSelectQueryDlgTab2.h" />
+    <ClInclude Include="CUpdateQueryDlg.h" />
+    <ClInclude Include="CUpdateQueryDlgTab1.h" />
+    <ClInclude Include="CUpdateQueryDlgTab2.h" />
     <ClInclude Include="database-odbc-gui-project.h" />
     <ClInclude Include="database-odbc-gui-projectDlg.h" />
     <ClInclude Include="framework.h" />
@@ -216,6 +219,9 @@
     <ClCompile Include="CSelectQueryDlg.cpp" />
     <ClCompile Include="CSelectQueryDlgTab1.cpp" />
     <ClCompile Include="CSelectQueryDlgTab2.cpp" />
+    <ClCompile Include="CUpdateQueryDlg.cpp" />
+    <ClCompile Include="CUpdateQueryDlgTab1.cpp" />
+    <ClCompile Include="CUpdateQueryDlgTab2.cpp" />
     <ClCompile Include="database-odbc-gui-project.cpp" />
     <ClCompile Include="database-odbc-gui-projectDlg.cpp" />
     <ClCompile Include="pch.cpp">
