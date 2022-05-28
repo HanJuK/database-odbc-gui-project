@@ -66,9 +66,9 @@ BOOL CSelectQueryDlgTab1::OnInitDialog()
 
 void CSelectQueryDlgTab1::OnBnClickedButtonQuery()
 {
-	ODBC* odbc = new ODBC();
+	ODBC* odbc1 = new ODBC(), * odbc2 = new ODBC();
 
-	if (odbc->DBConnect())
+	if (odbc1->DBConnect())
 	{
 		char* result1, * result2;
 		char query1[1000] = "select C.ID, C.NAME, C.PHONE, C.EMAIL, C.ADDRESS, C.MILEAGE, C.MARKETING "
@@ -86,7 +86,7 @@ void CSelectQueryDlgTab1::OnBnClickedButtonQuery()
 		strcat(query1, employeeId);
 		strcat(query2, employeeId);
 
-		result1 = odbc->getSelectQueryResult(query1);
+		result1 = odbc1->getSelectQueryResult(query1);
 
 		itemCount = m_listCustomer.GetItemCount();
 		for (int i = 0; i < itemCount; ++i)
@@ -109,34 +109,44 @@ void CSelectQueryDlgTab1::OnBnClickedButtonQuery()
 			m_listCustomer.SetItemText(nItem, 6, resultLineColumn[6].c_str());
 		}
 
-		result2 = odbc->getSelectQueryResult(query2);
-
-		itemCount = m_listCustomPC.GetItemCount();
-		for (int i = 0; i < itemCount; ++i)
+		if (odbc2->DBConnect())
 		{
-			m_listCustomPC.DeleteItem(0);
+			result2 = odbc2->getSelectQueryResult(query2);
+
+			itemCount = m_listCustomPC.GetItemCount();
+			for (int i = 0; i < itemCount; ++i)
+			{
+				m_listCustomPC.DeleteItem(0);
+			}
+
+			resultLine = Util::splitString(result2, '\n');
+			for (int i = 0; i < resultLine.size(); ++i)
+			{
+				std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
+
+				int nItem;
+				nItem = m_listCustomPC.InsertItem(i, resultLineColumn[0].c_str());
+				m_listCustomPC.SetItemText(nItem, 1, resultLineColumn[1].c_str());
+				m_listCustomPC.SetItemText(nItem, 2, resultLineColumn[2].c_str());
+				m_listCustomPC.SetItemText(nItem, 3, resultLineColumn[3].c_str());
+				m_listCustomPC.SetItemText(nItem, 4, resultLineColumn[4].c_str());
+			}
+		}
+		else
+		{
+			// TODO: handle exception
 		}
 
-		resultLine = Util::splitString(result2, '\n');
-		for (int i = 0; i < resultLine.size(); ++i)
-		{
-			std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
-
-			int nItem;
-			nItem = m_listCustomPC.InsertItem(i, resultLineColumn[0].c_str());
-			m_listCustomPC.SetItemText(nItem, 1, resultLineColumn[1].c_str());
-			m_listCustomPC.SetItemText(nItem, 2, resultLineColumn[2].c_str());
-			m_listCustomPC.SetItemText(nItem, 3, resultLineColumn[3].c_str());
-			m_listCustomPC.SetItemText(nItem, 4, resultLineColumn[4].c_str());
-		}
+		odbc2->DBDisconnect();
+		delete odbc2;
 	}
 	else
 	{
 		// TODO: handle exception
 	}
 
-	odbc->DBDisconnect();
-	delete odbc;
+	odbc1->DBDisconnect();
+	delete odbc1;
 
 	return;
 }

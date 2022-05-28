@@ -102,9 +102,9 @@ BOOL CUpdateQueryDlgTab1::OnInitDialog()
 
 void CUpdateQueryDlgTab1::OnBnClickedButtonQuery()
 {
-	ODBC* odbc = new ODBC();
+	ODBC* odbc1 = new ODBC(), * odbc2 = new ODBC();
 
-	if (odbc->DBConnect())
+	if (odbc1->DBConnect())
 	{
 		char* result;
 		char query1[1000] = { '\0' };
@@ -119,38 +119,48 @@ void CUpdateQueryDlgTab1::OnBnClickedButtonQuery()
 		m_editSalary.GetWindowTextA(salary);
 
 		sprintf(query1 + strlen(query1), "update EMPLOYEE set SALARY = %s where ID = %s", salary, id);
-		odbc->doInsertDeleteUpdateQuery(query1);
+		odbc1->doInsertDeleteUpdateQuery(query1);
 
-		result = odbc->getSelectQueryResult(query2);
-
-		itemCount = m_listEmployee.GetItemCount();
-		for (int i = 0; i < itemCount; ++i)
+		if (odbc2->DBConnect())
 		{
-			m_listEmployee.DeleteItem(0);
+			result = odbc2->getSelectQueryResult(query2);
+
+			itemCount = m_listEmployee.GetItemCount();
+			for (int i = 0; i < itemCount; ++i)
+			{
+				m_listEmployee.DeleteItem(0);
+			}
+
+			resultLine = Util::splitString(result, '\n');
+			for (int i = 0; i < resultLine.size(); ++i)
+			{
+				std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
+
+				int nItem;
+				nItem = m_listEmployee.InsertItem(i, resultLineColumn[0].c_str());
+				m_listEmployee.SetItemText(nItem, 1, resultLineColumn[1].c_str());
+				m_listEmployee.SetItemText(nItem, 2, resultLineColumn[2].c_str());
+				m_listEmployee.SetItemText(nItem, 3, resultLineColumn[3].c_str());
+				m_listEmployee.SetItemText(nItem, 4, resultLineColumn[4].c_str());
+				m_listEmployee.SetItemText(nItem, 5, resultLineColumn[5].c_str());
+				m_listEmployee.SetItemText(nItem, 6, resultLineColumn[6].c_str());
+			}
+		}
+		else
+		{
+			// TODO: handle exception
 		}
 
-		resultLine = Util::splitString(result, '\n');
-		for (int i = 0; i < resultLine.size(); ++i)
-		{
-			std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
-
-			int nItem;
-			nItem = m_listEmployee.InsertItem(i, resultLineColumn[0].c_str());
-			m_listEmployee.SetItemText(nItem, 1, resultLineColumn[1].c_str());
-			m_listEmployee.SetItemText(nItem, 2, resultLineColumn[2].c_str());
-			m_listEmployee.SetItemText(nItem, 3, resultLineColumn[3].c_str());
-			m_listEmployee.SetItemText(nItem, 4, resultLineColumn[4].c_str());
-			m_listEmployee.SetItemText(nItem, 5, resultLineColumn[5].c_str());
-			m_listEmployee.SetItemText(nItem, 6, resultLineColumn[6].c_str());
-		}
+		odbc2->DBDisconnect();
+		delete odbc2;
 	}
 	else
 	{
 		// TODO: handle exception
 	}
 
-	odbc->DBDisconnect();
-	delete odbc;
+	odbc1->DBDisconnect();
+	delete odbc1;
 
 	return;
 }

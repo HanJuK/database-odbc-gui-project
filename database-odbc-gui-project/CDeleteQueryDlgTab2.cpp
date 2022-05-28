@@ -104,9 +104,9 @@ void CDeleteQueryDlgTab2::OnBnClickedButtonViewPurchased()
 
 void CDeleteQueryDlgTab2::OnBnClickedButtonQuery()
 {
-	ODBC* odbc = new ODBC();
+	ODBC* odbc1 = new ODBC(), * odbc2 = new ODBC();
 
-	if (odbc->DBConnect())
+	if (odbc1->DBConnect())
 	{
 		char* result;
 		char query1[1000] = { '\0' };
@@ -119,37 +119,47 @@ void CDeleteQueryDlgTab2::OnBnClickedButtonQuery()
 
 		sprintf(query1 + strlen(query1), "delete from PURCHASE where CUSTOMER_ID = %s and DATETIME = '%s'",
 				id, datetime);
-		odbc->doInsertDeleteUpdateQuery(query1);
+		odbc1->doInsertDeleteUpdateQuery(query1);
 
-		sprintf(query2 + strlen(query2), "select PURCHASE.DATETIME, PURCHASE.CUSTOM_PC_NAME "
-				"from PURCHASE "
-				"where CUSTOMER_ID = %s and RATING is NULL", id);
-
-		result = odbc->getSelectQueryResult(query2);
-
-		itemCount = m_listPurchase.GetItemCount();
-		for (int i = 0; i < itemCount; ++i)
+		if (odbc2->DBConnect())
 		{
-			m_listPurchase.DeleteItem(0);
+			sprintf(query2 + strlen(query2), "select PURCHASE.DATETIME, PURCHASE.CUSTOM_PC_NAME "
+					"from PURCHASE "
+					"where CUSTOMER_ID = %s and RATING is NULL", id);
+
+			result = odbc2->getSelectQueryResult(query2);
+
+			itemCount = m_listPurchase.GetItemCount();
+			for (int i = 0; i < itemCount; ++i)
+			{
+				m_listPurchase.DeleteItem(0);
+			}
+
+			resultLine = Util::splitString(result, '\n');
+			for (int i = 0; i < resultLine.size(); ++i)
+			{
+				std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
+
+				int nItem;
+				nItem = m_listPurchase.InsertItem(i, resultLineColumn[0].c_str());
+				m_listPurchase.SetItemText(nItem, 1, resultLineColumn[1].c_str());
+			}
+		}
+		else
+		{
+			// TODO: handle exception
 		}
 
-		resultLine = Util::splitString(result, '\n');
-		for (int i = 0; i < resultLine.size(); ++i)
-		{
-			std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
-
-			int nItem;
-			nItem = m_listPurchase.InsertItem(i, resultLineColumn[0].c_str());
-			m_listPurchase.SetItemText(nItem, 1, resultLineColumn[1].c_str());
-		}
+		odbc2->DBDisconnect();
+		delete odbc2;
 	}
 	else
 	{
 		// TODO: handle exception
 	}
 
-	odbc->DBDisconnect();
-	delete odbc;
+	odbc1->DBDisconnect();
+	delete odbc1;
 
 	return;
 }

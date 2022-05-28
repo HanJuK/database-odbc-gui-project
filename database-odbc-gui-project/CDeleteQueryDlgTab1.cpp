@@ -100,9 +100,9 @@ BOOL CDeleteQueryDlgTab1::OnInitDialog()
 
 void CDeleteQueryDlgTab1::OnBnClickedButtonQuery()
 {
-	ODBC* odbc = new ODBC();
+	ODBC* odbc1 = new ODBC(), * odbc2 = new ODBC(), * odbc3 = new ODBC();
 
-	if (odbc->DBConnect())
+	if (odbc1->DBConnect())
 	{
 		char* result;
 		char query1[1000] = { '\0' };
@@ -118,30 +118,47 @@ void CDeleteQueryDlgTab1::OnBnClickedButtonQuery()
 		m_editName.GetWindowTextA(name);
 
 		sprintf(query1 + strlen(query1), "delete from CUSTOM_PC where NAME = '%s'", name);
-		odbc->doInsertDeleteUpdateQuery(query1);
+		odbc1->doInsertDeleteUpdateQuery(query1);
 
-		sprintf(query2 + strlen(query2), "update PURCHASE set CUSTOM_PC_NAME = NULL where CUSTOM_PC_NAME = '%s'", name);
-		odbc->doInsertDeleteUpdateQuery(query2);
-
-		result = odbc->getSelectQueryResult(query3);
-
-		itemCount = m_listCustomPC.GetItemCount();
-		for (int i = 0; i < itemCount; ++i)
+		if (odbc2->DBConnect())
 		{
-			m_listCustomPC.DeleteItem(0);
+			sprintf(query2 + strlen(query2), "update PURCHASE set CUSTOM_PC_NAME = NULL where CUSTOM_PC_NAME = '%s'", name);
+			odbc2->doInsertDeleteUpdateQuery(query2);
+		}
+		else
+		{
+			// TODO: handle exception
 		}
 
-		resultLine = Util::splitString(result, '\n');
-		for (int i = 0; i < resultLine.size(); ++i)
+		odbc2->DBDisconnect();
+		delete odbc2;
+		
+		if (odbc3->DBConnect())
 		{
-			std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
+			result = odbc3->getSelectQueryResult(query3);
 
-			int nItem;
-			nItem = m_listCustomPC.InsertItem(i, resultLineColumn[0].c_str());
-			m_listCustomPC.SetItemText(nItem, 1, resultLineColumn[1].c_str());
-			m_listCustomPC.SetItemText(nItem, 2, resultLineColumn[2].c_str());
-			m_listCustomPC.SetItemText(nItem, 3, resultLineColumn[3].c_str());
-			m_listCustomPC.SetItemText(nItem, 4, resultLineColumn[4].c_str());
+			itemCount = m_listCustomPC.GetItemCount();
+			for (int i = 0; i < itemCount; ++i)
+			{
+				m_listCustomPC.DeleteItem(0);
+			}
+
+			resultLine = Util::splitString(result, '\n');
+			for (int i = 0; i < resultLine.size(); ++i)
+			{
+				std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
+
+				int nItem;
+				nItem = m_listCustomPC.InsertItem(i, resultLineColumn[0].c_str());
+				m_listCustomPC.SetItemText(nItem, 1, resultLineColumn[1].c_str());
+				m_listCustomPC.SetItemText(nItem, 2, resultLineColumn[2].c_str());
+				m_listCustomPC.SetItemText(nItem, 3, resultLineColumn[3].c_str());
+				m_listCustomPC.SetItemText(nItem, 4, resultLineColumn[4].c_str());
+			}
+		}
+		else
+		{
+			// TODO: handle exception
 		}
 	}
 	else
@@ -149,8 +166,8 @@ void CDeleteQueryDlgTab1::OnBnClickedButtonQuery()
 		// TODO: handle exception
 	}
 
-	odbc->DBDisconnect();
-	delete odbc;
+	odbc1->DBDisconnect();
+	delete odbc1;
 
 	return;
 }
