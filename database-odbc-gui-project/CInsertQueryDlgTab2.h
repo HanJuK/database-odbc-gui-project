@@ -21,4 +21,14 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedButtonQuery();
+	CEdit m_editId;
+	CEdit m_editName;
+	CEdit m_editPhone;
+	CEdit m_editEmail;
+	CEdit m_editAddress;
+	CEdit m_editMileage;
+	CEdit m_editMarketing;
+	CEdit m_editManagerEmployeeId;
 };

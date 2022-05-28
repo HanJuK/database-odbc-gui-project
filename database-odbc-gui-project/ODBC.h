@@ -74,7 +74,10 @@ public:
 			SQLCHAR tableName[50];
 
 			sprintf((char*)querySQL, query);
-			SQLExecDirect(hStmt, querySQL, SQL_NTS);
+			if (SQLExecDirect(hStmt, querySQL, SQL_NTS) == SQL_ERROR)
+			{
+				// TODO: handle exception
+			}
 
 			SQLBindCol(hStmt, 1, SQL_C_CHAR, tableName, 50, NULL);
 			while (SQLFetch(hStmt) != SQL_NO_DATA)
@@ -108,7 +111,10 @@ public:
 			SQLSMALLINT numCols = -1;
 
 			sprintf((char*)querySQL, query);
-			SQLExecDirect(hStmt, querySQL, SQL_NTS);
+			if (SQLExecDirect(hStmt, querySQL, SQL_NTS) == SQL_ERROR)
+			{
+				// TODO: handle exception
+			}
 
 			SQLNumResultCols(hStmt, &numCols);
 			for (int i = 0; i < numCols; ++i)
@@ -152,7 +158,10 @@ public:
 			SQLLEN nulldata[100];
 
 			sprintf((char*)querySQL, query);
-			SQLExecDirect(hStmt, querySQL, SQL_NTS);
+			if (SQLExecDirect(hStmt, querySQL, SQL_NTS) == SQL_ERROR)
+			{
+				// TODO: handle exception
+			}
 
 			SQLNumResultCols(hStmt, &colCount);
 			for (int i = 0; i < colCount; ++i)
@@ -176,5 +185,26 @@ public:
 		}
 
 		return result;
+	}
+
+	void doInsertQuery(static char* query)
+	{
+		SQLCHAR querySQL[1000]; // query statement for SQL
+		SQLHSTMT hStmt; // statement handle
+
+		if (SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt) == SQL_SUCCESS)
+		{
+			sprintf((char*)querySQL, query);
+			if (SQLExecDirect(hStmt, querySQL, SQL_NTS) == SQL_ERROR)
+			{
+				// TODO: handle exception
+			}
+		}
+		else
+		{
+			// TODO: handle error
+		}
+
+		return;
 	}
 };

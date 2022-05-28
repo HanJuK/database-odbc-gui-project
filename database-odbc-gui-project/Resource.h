@@ -22,9 +22,33 @@
 #define IDC_EDIT_EMPLOYEE_ID            1014
 #define IDC_BUTTON_QUERY                1015
 #define IDC_BUTTON1                     1016
-#define IDC_BUTTON_INSERT               1016
 #define IDC_BUTTON_INSERT_QUERY         1016
 #define IDC_LIST1                       1017
+#define IDC_STATIC_ID                   1018
+#define IDC_EDIT_ID                     1019
+#define IDC_STATIC_NAME                 1020
+#define IDC_EDIT_NAME                   1021
+#define IDC_STATIC_PHONE                1022
+#define IDC_EDIT_PHONE                  1023
+#define IDC_STATIC_DEPARTMENT           1024
+#define IDC_EDIT_DEPARTMENT             1025
+#define IDC_STATIC_ROLE                 1026
+#define IDC_EDIT_ROLE                   1027
+#define IDC_STATIC_SALARY               1028
+#define IDC_EDIT6                       1029
+#define IDC_STATIC_SUPERIOR_EMPLOYEE_ID 1030
+#define IDC_EDIT7                       1031
+#define IDC_STATIC_EMAIL                1035
+#define IDC_EDIT_EMAIL                  1036
+#define IDC_STATIC_ADDRESS              1037
+#define IDC_EDIT_ADDRESS                1038
+#define IDC_STATIC_MILEAGE              1039
+#define IDC_EDIT_MILEAGE                1040
+#define IDC_STATIC_MARKETING            1041
+#define IDC_EDIT_MARKETING              1042
+#define IDC_STATIC_                     1043
+#define IDC_STATIC_MANAGER_EMPLOYEE_ID  1043
+#define IDC_EDIT_MANAGER_EMPLOYEE_ID    1044
 
 // Next default values for new objects
 // 
@@ -32,7 +56,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        148
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1018
+#define _APS_NEXT_CONTROL_VALUE         1045
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
