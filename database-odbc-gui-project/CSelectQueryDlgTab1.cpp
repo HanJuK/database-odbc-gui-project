@@ -45,19 +45,19 @@ BOOL CSelectQueryDlgTab1::OnInitDialog()
 {
 	UpdateData(false);
 
-	m_listCustomer.InsertColumn(0, _T("ID"), LVCFMT_LEFT, 100);
-	m_listCustomer.InsertColumn(1, _T("Name"), LVCFMT_LEFT, 100);
-	m_listCustomer.InsertColumn(2, _T("Phone"), LVCFMT_LEFT, 100);
-	m_listCustomer.InsertColumn(3, _T("Email"), LVCFMT_LEFT, 100);
-	m_listCustomer.InsertColumn(4, _T("Address"), LVCFMT_LEFT, 100);
-	m_listCustomer.InsertColumn(5, _T("Mileage"), LVCFMT_LEFT, 100);
-	m_listCustomer.InsertColumn(6, _T("Marketing"), LVCFMT_LEFT, 100);
+	m_listCustomer.InsertColumn(0, _T("ID"), LVCFMT_LEFT, 60);
+	m_listCustomer.InsertColumn(1, _T("Name"), LVCFMT_LEFT, 90);
+	m_listCustomer.InsertColumn(2, _T("Phone"), LVCFMT_LEFT, 90);
+	m_listCustomer.InsertColumn(3, _T("Email"), LVCFMT_LEFT, 120);
+	m_listCustomer.InsertColumn(4, _T("Address"), LVCFMT_LEFT, 120);
+	m_listCustomer.InsertColumn(5, _T("Mileage"), LVCFMT_LEFT, 60);
+	m_listCustomer.InsertColumn(6, _T("Marketing"), LVCFMT_LEFT, 60);
 
 	m_listCustomPC.InsertColumn(0, _T("Name"), LVCFMT_LEFT, 100);
-	m_listCustomPC.InsertColumn(1, _T("Price"), LVCFMT_LEFT, 100);
-	m_listCustomPC.InsertColumn(2, _T("Availability"), LVCFMT_LEFT, 100);
+	m_listCustomPC.InsertColumn(1, _T("Price"), LVCFMT_LEFT, 60);
+	m_listCustomPC.InsertColumn(2, _T("Availability"), LVCFMT_LEFT, 90);
 	m_listCustomPC.InsertColumn(3, _T("Type"), LVCFMT_LEFT, 100);
-	m_listCustomPC.InsertColumn(4, _T("Rating"), LVCFMT_LEFT, 100);
+	m_listCustomPC.InsertColumn(4, _T("Rating"), LVCFMT_LEFT, 60);
 
 	UpdateData(true);
 

@@ -66,11 +66,11 @@ BOOL CSchemaCheckDlg::OnInitDialog()
 	odbc->DBDisconnect();
 	delete odbc;
 
-	m_listSchema.InsertColumn(0, _T("Column Name"), LVCFMT_LEFT, 100);
-	m_listSchema.InsertColumn(1, _T("Column Name Length"), LVCFMT_LEFT, 100);
-	m_listSchema.InsertColumn(2, _T("SQL Data Type"), LVCFMT_LEFT, 100);
-	m_listSchema.InsertColumn(3, _T("Data Size"), LVCFMT_LEFT, 100);
-	m_listSchema.InsertColumn(4, _T("Data Nullable"), LVCFMT_LEFT, 100);
+	m_listSchema.InsertColumn(0, _T("Column Name"), LVCFMT_LEFT, 150);
+	m_listSchema.InsertColumn(1, _T("Column Name Length"), LVCFMT_LEFT, 120);
+	m_listSchema.InsertColumn(2, _T("SQL Data Type"), LVCFMT_LEFT, 90);
+	m_listSchema.InsertColumn(3, _T("Data Size"), LVCFMT_LEFT, 60);
+	m_listSchema.InsertColumn(4, _T("Data Nullable"), LVCFMT_LEFT, 90);
 
 	UpdateData(true);
 

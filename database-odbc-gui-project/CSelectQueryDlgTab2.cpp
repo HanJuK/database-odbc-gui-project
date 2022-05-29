@@ -44,11 +44,11 @@ BOOL CSelectQueryDlgTab2::OnInitDialog()
 	UpdateData(false);
 
 	m_listCustomPC.InsertColumn(0, _T("Name"), LVCFMT_LEFT, 100);
-	m_listCustomPC.InsertColumn(1, _T("Price"), LVCFMT_LEFT, 100);
-	m_listCustomPC.InsertColumn(2, _T("Availability"), LVCFMT_LEFT, 100);
+	m_listCustomPC.InsertColumn(1, _T("Price"), LVCFMT_LEFT, 60);
+	m_listCustomPC.InsertColumn(2, _T("Availability"), LVCFMT_LEFT, 90);
 	m_listCustomPC.InsertColumn(3, _T("Type"), LVCFMT_LEFT, 100);
-	m_listCustomPC.InsertColumn(4, _T("Rating"), LVCFMT_LEFT, 100);
-	m_listCustomPC.InsertColumn(5, _T("Builder Employee ID"), LVCFMT_LEFT, 100);
+	m_listCustomPC.InsertColumn(4, _T("Rating"), LVCFMT_LEFT, 60);
+	m_listCustomPC.InsertColumn(5, _T("Builder Employee ID"), LVCFMT_LEFT, 120);
 
 	UpdateData(true);
 
