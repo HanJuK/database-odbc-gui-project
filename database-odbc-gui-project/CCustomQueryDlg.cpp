@@ -120,7 +120,22 @@ void CCustomQueryDlg::OnBnClickedButtonQuery()
 	}
 	else
 	{
-		// TODO: 
+		ODBC* odbc = new ODBC();
+
+		if (odbc->DBConnect())
+		{
+			char queryChar[1000] = { '\0' };
+			strcpy(queryChar, query);
+
+			odbc->doInsertDeleteUpdateQuery(queryChar);
+		}
+		else
+		{
+			// TODO: handle exception
+		}
+
+		odbc->DBDisconnect();
+		delete odbc;
 	}
 
 	return;
