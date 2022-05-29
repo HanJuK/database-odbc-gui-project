@@ -74,7 +74,7 @@ void CCustomQueryDlg::OnBnClickedButtonQuery()
 			{
 				std::vector<std::string> resultLineColumn = Util::splitString(resultLine[i], '|');
 
-				m_listResult.InsertColumn(i, resultLineColumn[0].c_str(), LVCFMT_LEFT, 100);
+				m_listResult.InsertColumn(i, resultLineColumn[0].c_str(), LVCFMT_LEFT, 90);
 			}
 
 			if (odbc2->DBConnect())
