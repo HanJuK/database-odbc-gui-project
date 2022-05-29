@@ -66,7 +66,6 @@
 #define IDC_EDIT_SUPERIOR_EMPLOYEE_ID   1055
 #define IDC_EDIT_QUERY                  1056
 #define IDC_BUTTON_CUSTOM_QUERY         1057
-#define IDC_MFCLINK1                    1058
 
 // Next default values for new objects
 // 

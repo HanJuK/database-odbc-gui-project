@@ -46,13 +46,13 @@ BOOL CUpdateQueryDlgTab1::OnInitDialog()
 {
 	UpdateData(false);
 
-	m_listEmployee.InsertColumn(0, _T("Id"), LVCFMT_LEFT, 100);
+	m_listEmployee.InsertColumn(0, _T("Id"), LVCFMT_LEFT, 60);
 	m_listEmployee.InsertColumn(1, _T("Name"), LVCFMT_LEFT, 100);
 	m_listEmployee.InsertColumn(2, _T("Phone"), LVCFMT_LEFT, 100);
 	m_listEmployee.InsertColumn(3, _T("Department"), LVCFMT_LEFT, 100);
-	m_listEmployee.InsertColumn(4, _T("Role"), LVCFMT_LEFT, 100);
-	m_listEmployee.InsertColumn(5, _T("Salary"), LVCFMT_LEFT, 100);
-	m_listEmployee.InsertColumn(6, _T("Superior Employee ID"), LVCFMT_LEFT, 100);
+	m_listEmployee.InsertColumn(4, _T("Role"), LVCFMT_LEFT, 90);
+	m_listEmployee.InsertColumn(5, _T("Salary"), LVCFMT_LEFT, 90);
+	m_listEmployee.InsertColumn(6, _T("Superior Employee ID"), LVCFMT_LEFT, 120);
 
 	ODBC* odbc = new ODBC();
 
