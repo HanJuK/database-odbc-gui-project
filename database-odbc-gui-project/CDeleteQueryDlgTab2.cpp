@@ -48,8 +48,8 @@ BOOL CDeleteQueryDlgTab2::OnInitDialog()
 {
 	UpdateData(false);
 
-	m_listPurchase.InsertColumn(0, _T("Datetime"), LVCFMT_LEFT, 100);
-	m_listPurchase.InsertColumn(1, _T("Custom PC Name"), LVCFMT_LEFT, 100);
+	m_listPurchase.InsertColumn(0, _T("Datetime"), LVCFMT_LEFT, 150);
+	m_listPurchase.InsertColumn(1, _T("Custom PC Name"), LVCFMT_LEFT, 120);
 	
 	UpdateData(true);
 
