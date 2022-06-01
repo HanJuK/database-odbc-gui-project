@@ -123,7 +123,8 @@ void CDeleteQueryDlgTab4::OnBnClickedButtonQuery()
 
 		if (odbc2->DBConnect())
 		{
-			sprintf(query2 + strlen(query2), "update PURCHASE set PARTNER_NAME = NULL where PARTNER_NAME = '%s'", name);
+			sprintf(query2 + strlen(query2), "update CONTAINS_RELATION set PARTNER_NAME = NULL where PARTNER_NAME = '%s'",
+					name);
 			odbc2->doInsertDeleteUpdateQuery(query2);
 		}
 		else
@@ -136,9 +137,9 @@ void CDeleteQueryDlgTab4::OnBnClickedButtonQuery()
 
 		if (odbc3->DBConnect())
 		{
-			CString name;
-			m_editName.GetWindowTextA(name);
-			sprintf(query1 + strlen(query1), "delete from PARTNER where NAME = '%s'", name);
+			CString endDate;
+			m_editEndDate.GetWindowTextA(endDate);
+			sprintf(query3 + strlen(query3), "select * from PARTNER where END_DATE < '%s'", endDate);
 
 			result = odbc3->getSelectQueryResult(query3);
 
