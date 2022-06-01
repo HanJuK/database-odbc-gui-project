@@ -136,9 +136,9 @@ void CDeleteQueryDlgTab4::OnBnClickedButtonQuery()
 
 		if (odbc3->DBConnect())
 		{
-			CString endDate;
-			m_editEndDate.GetWindowTextA(endDate);
-			sprintf(query3 + strlen(query3), "select * from PARTNER where END_DATE < '%s'", endDate);
+			CString name;
+			m_editName.GetWindowTextA(name);
+			sprintf(query1 + strlen(query1), "delete from PARTNER where NAME = '%s'", name);
 
 			result = odbc3->getSelectQueryResult(query3);
 

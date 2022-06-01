@@ -7,6 +7,8 @@
 #include "CUpdateQueryDlg.h"
 #include "CUpdateQueryDlgTab1.h"
 #include "CUpdateQueryDlgTab2.h"
+#include "CUpdateQueryDlgTab3.h"
+#include "CUpdateQueryDlgTab4.h"
 
 
 // CUpdateQueryDlg dialog
@@ -43,6 +45,8 @@ BOOL CUpdateQueryDlg::OnInitDialog()
 
 	m_tabScenario.InsertItem(0, _T("Scenario 1"));
 	m_tabScenario.InsertItem(1, _T("Scenario 2"));
+	m_tabScenario.InsertItem(2, _T("Scenario 3"));
+	m_tabScenario.InsertItem(3, _T("Scenario 4"));
 	m_tabScenario.SetCurSel(0);
 
 	CRect rect;
@@ -58,6 +62,16 @@ BOOL CUpdateQueryDlg::OnInitDialog()
 	p_m_tabScenarioTab2->MoveWindow(0, 20, rect.Width(), rect.Height());
 	p_m_tabScenarioTab2->ShowWindow(SW_HIDE);
 
+	p_m_tabScenarioTab3 = new CUpdateQueryDlgTab3;
+	p_m_tabScenarioTab3->Create(IDD_DIALOG_UPDATE_QUERY_TAB3, &m_tabScenario);
+	p_m_tabScenarioTab3->MoveWindow(0, 20, rect.Width(), rect.Height());
+	p_m_tabScenarioTab3->ShowWindow(SW_HIDE);
+
+	p_m_tabScenarioTab4 = new CUpdateQueryDlgTab4;
+	p_m_tabScenarioTab4->Create(IDD_DIALOG_UPDATE_QUERY_TAB4, &m_tabScenario);
+	p_m_tabScenarioTab4->MoveWindow(0, 20, rect.Width(), rect.Height());
+	p_m_tabScenarioTab4->ShowWindow(SW_HIDE);
+
 	UpdateData(true);
 
 	return true;
@@ -72,10 +86,26 @@ void CUpdateQueryDlg::OnTcnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult)
 		case 0:
 			p_m_tabScenarioTab1->ShowWindow(SW_SHOW);
 			p_m_tabScenarioTab2->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab3->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab4->ShowWindow(SW_HIDE);
 			break;
 		case 1:
 			p_m_tabScenarioTab1->ShowWindow(SW_HIDE);
 			p_m_tabScenarioTab2->ShowWindow(SW_SHOW);
+			p_m_tabScenarioTab3->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab4->ShowWindow(SW_HIDE);
+			break;
+		case 2:
+			p_m_tabScenarioTab1->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab2->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab3->ShowWindow(SW_SHOW);
+			p_m_tabScenarioTab4->ShowWindow(SW_HIDE);
+			break;
+		case 3:
+			p_m_tabScenarioTab1->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab2->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab3->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab4->ShowWindow(SW_SHOW);
 			break;
 		default:
 			break;
