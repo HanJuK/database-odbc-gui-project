@@ -20,8 +20,9 @@
 #define IDD_DIALOG_CUSTOM_QUERY         160
 #define IDD_DIALOG_SELECT_QUERY_TAB3    162
 #define IDD_DIALOG_SELECT_QUERY_TAB4    164
-#define IDD_DIALOG1                     166
 #define IDD_DIALOG_SELECT_QUERY_TAB5    166
+#define IDD_DIALOG_INSERT_QUERY_TAB3    168
+#define IDD_DIALOG_INSERT_QUERY_TAB4    170
 #define BUTTON_SCHEMA_CHECK             1001
 #define IDC_STATIC_TABLE                1006
 #define IDC_COMBO_TABLE                 1007
@@ -71,14 +72,24 @@
 #define IDC_EDIT_QUERY                  1056
 #define IDC_BUTTON_CUSTOM_QUERY         1057
 #define IDC_STATIC_RESULT               1061
+#define IDC_EDIT_CUSTOMER_ID            1062
+#define IDC_STATIC_DATETIME             1063
+#define IDC_STATIC_CUSTOM_PC_NAME       1065
+#define IDC_EDIT2                       1066
+#define IDC_STATIC_RATING               1067
+#define IDC_EDIT_RATING                 1068
+#define IDC_STATIC_PRICE                1069
+#define IDC_STATIC_AVAILABILITY         1070
+#define IDC_STATIC_TYPE                 1071
+#define IDC_STATIC_BUILDER_EMPLOYEE_ID  1072
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        168
+#define _APS_NEXT_RESOURCE_VALUE        172
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1062
+#define _APS_NEXT_CONTROL_VALUE         1073
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

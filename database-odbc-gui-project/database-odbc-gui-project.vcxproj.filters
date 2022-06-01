@@ -90,6 +90,12 @@
     <ClInclude Include="CSelectQueryDlgTab5.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CInsertQueryDlgTab3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CInsertQueryDlgTab4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="database-odbc-gui-project.cpp">
@@ -150,6 +156,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CSelectQueryDlgTab5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CInsertQueryDlgTab3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CInsertQueryDlgTab4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
