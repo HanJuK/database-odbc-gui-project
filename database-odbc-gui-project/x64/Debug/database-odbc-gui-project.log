@@ -1,8 +1,17 @@
-﻿  CCustomQueryDlg.cpp
+﻿  CSelectQueryDlg.cpp
+  CSelectQueryDlgTab3.cpp
 C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(65,40): warning C4042: 'query': has bad storage class
 C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(96,41): warning C4042: 'query': has bad storage class
 C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(147,47): warning C4042: 'query': has bad storage class
 C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(190,51): warning C4042: 'query': has bad storage class
-C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(144): warning C4172: returning address of local variable or temporary: result
+C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\CSelectQueryDlgTab3.cpp(70,34): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'CString'
+  CSelectQueryDlgTab5.cpp
+C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(65,40): warning C4042: 'query': has bad storage class
+C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(96,41): warning C4042: 'query': has bad storage class
+C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(147,47): warning C4042: 'query': has bad storage class
+C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(190,51): warning C4042: 'query': has bad storage class
+C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\CSelectQueryDlgTab5.cpp(70,34): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'CString'
+  Generating Code...
+C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(187): warning C4172: returning address of local variable or temporary: result
 C:\Android\Projects-nonAndroid\database-odbc-gui-project\database-odbc-gui-project\odbc.h(187): warning C4172: returning address of local variable or temporary: result
   database-odbc-gui-project.vcxproj -> C:\Android\Projects-nonAndroid\database-odbc-gui-project\x64\Debug\database-odbc-gui-project.exe

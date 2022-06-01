@@ -3,6 +3,9 @@
 
 class CSelectQueryDlgTab1;
 class CSelectQueryDlgTab2;
+class CSelectQueryDlgTab3;
+class CSelectQueryDlgTab4;
+class CSelectQueryDlgTab5;
 
 // CSelectQueryDlg dialog
 
@@ -29,5 +32,8 @@ public:
 	CTabCtrl m_tabScenario;
 	CSelectQueryDlgTab1* p_m_tabScenarioTab1;
 	CSelectQueryDlgTab2* p_m_tabScenarioTab2;
+	CSelectQueryDlgTab3* p_m_tabScenarioTab3;
+	CSelectQueryDlgTab4* p_m_tabScenarioTab4;
+	CSelectQueryDlgTab5* p_m_tabScenarioTab5;
 	afx_msg void OnTcnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult);
 };

@@ -7,6 +7,9 @@
 #include "CSelectQueryDlg.h"
 #include "CSelectQueryDlgTab1.h"
 #include "CSelectQueryDlgTab2.h"
+#include "CSelectQueryDlgTab3.h"
+#include "CSelectQueryDlgTab4.h"
+#include "CSelectQueryDlgTab5.h"
 
 
 // CSelectQueryDlg dialog
@@ -43,6 +46,9 @@ BOOL CSelectQueryDlg::OnInitDialog()
 
 	m_tabScenario.InsertItem(0, _T("Scenario 1, 2"));
 	m_tabScenario.InsertItem(1, _T("Scenario 3"));
+	m_tabScenario.InsertItem(2, _T("Scenario 4"));
+	m_tabScenario.InsertItem(3, _T("Scenario 5"));
+	m_tabScenario.InsertItem(4, _T("Scenario 6"));
 	m_tabScenario.SetCurSel(0);
 
 	CRect rect;
@@ -58,6 +64,21 @@ BOOL CSelectQueryDlg::OnInitDialog()
 	p_m_tabScenarioTab2->MoveWindow(0, 20, rect.Width(), rect.Height());
 	p_m_tabScenarioTab2->ShowWindow(SW_HIDE);
 
+	p_m_tabScenarioTab3 = new CSelectQueryDlgTab3;
+	p_m_tabScenarioTab3->Create(IDD_DIALOG_SELECT_QUERY_TAB3, &m_tabScenario);
+	p_m_tabScenarioTab3->MoveWindow(0, 20, rect.Width(), rect.Height());
+	p_m_tabScenarioTab3->ShowWindow(SW_HIDE);
+
+	p_m_tabScenarioTab4 = new CSelectQueryDlgTab4;
+	p_m_tabScenarioTab4->Create(IDD_DIALOG_SELECT_QUERY_TAB4, &m_tabScenario);
+	p_m_tabScenarioTab4->MoveWindow(0, 20, rect.Width(), rect.Height());
+	p_m_tabScenarioTab4->ShowWindow(SW_HIDE);
+
+	p_m_tabScenarioTab5 = new CSelectQueryDlgTab5;
+	p_m_tabScenarioTab5->Create(IDD_DIALOG_SELECT_QUERY_TAB5, &m_tabScenario);
+	p_m_tabScenarioTab5->MoveWindow(0, 20, rect.Width(), rect.Height());
+	p_m_tabScenarioTab5->ShowWindow(SW_HIDE);
+
 	UpdateData(true);
 
 	return true;
@@ -72,10 +93,37 @@ void CSelectQueryDlg::OnTcnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult)
 		case 0:
 			p_m_tabScenarioTab1->ShowWindow(SW_SHOW);
 			p_m_tabScenarioTab2->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab3->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab4->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab5->ShowWindow(SW_HIDE);
 			break;
 		case 1:
 			p_m_tabScenarioTab1->ShowWindow(SW_HIDE);
 			p_m_tabScenarioTab2->ShowWindow(SW_SHOW);
+			p_m_tabScenarioTab3->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab4->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab5->ShowWindow(SW_HIDE);
+			break;
+		case 2:
+			p_m_tabScenarioTab1->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab2->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab3->ShowWindow(SW_SHOW);
+			p_m_tabScenarioTab4->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab5->ShowWindow(SW_HIDE);
+			break;
+		case 3:
+			p_m_tabScenarioTab1->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab2->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab3->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab4->ShowWindow(SW_SHOW);
+			p_m_tabScenarioTab5->ShowWindow(SW_HIDE);
+			break;
+		case 4:
+			p_m_tabScenarioTab1->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab2->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab3->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab4->ShowWindow(SW_HIDE);
+			p_m_tabScenarioTab5->ShowWindow(SW_SHOW);
 			break;
 		default:
 			break;
