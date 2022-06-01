@@ -190,6 +190,8 @@
     <ClInclude Include="CDeleteQueryDlg.h" />
     <ClInclude Include="CDeleteQueryDlgTab1.h" />
     <ClInclude Include="CDeleteQueryDlgTab2.h" />
+    <ClInclude Include="CDeleteQueryDlgTab3.h" />
+    <ClInclude Include="CDeleteQueryDlgTab4.h" />
     <ClInclude Include="CInsertQueryDlg.h" />
     <ClInclude Include="CInsertQueryDlgTab1.h" />
     <ClInclude Include="CInsertQueryDlgTab2.h" />
@@ -219,6 +221,8 @@
     <ClCompile Include="CDeleteQueryDlg.cpp" />
     <ClCompile Include="CDeleteQueryDlgTab1.cpp" />
     <ClCompile Include="CDeleteQueryDlgTab2.cpp" />
+    <ClCompile Include="CDeleteQueryDlgTab3.cpp" />
+    <ClCompile Include="CDeleteQueryDlgTab4.cpp" />
     <ClCompile Include="CInsertQueryDlg.cpp" />
     <ClCompile Include="CInsertQueryDlgTab1.cpp" />
     <ClCompile Include="CInsertQueryDlgTab2.cpp" />

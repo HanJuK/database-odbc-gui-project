@@ -23,6 +23,8 @@
 #define IDD_DIALOG_SELECT_QUERY_TAB5    166
 #define IDD_DIALOG_INSERT_QUERY_TAB3    168
 #define IDD_DIALOG_INSERT_QUERY_TAB4    170
+#define IDD_DIALOG_DELETE_QUERY_TAB3    172
+#define IDD_DIALOG_DELETE_QUERY_TAB4    174
 #define BUTTON_SCHEMA_CHECK             1001
 #define IDC_STATIC_TABLE                1006
 #define IDC_COMBO_TABLE                 1007
@@ -82,14 +84,18 @@
 #define IDC_STATIC_AVAILABILITY         1070
 #define IDC_STATIC_TYPE                 1071
 #define IDC_STATIC_BUILDER_EMPLOYEE_ID  1072
+#define IDC_BUTTON_VIEW_CUSTOM_PC       1073
+#define IDC_EDIT_END_DATE               1074
+#define IDC_BUTTON_VIEW_PARTNER         1075
+#define IDC_LIST_PARTNER                1076
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        172
+#define _APS_NEXT_RESOURCE_VALUE        176
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1073
+#define _APS_NEXT_CONTROL_VALUE         1077
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
