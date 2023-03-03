@@ -1,5 +1,6 @@
 # Database ODBC GUI Project
-A repository for school's Database course. (Spring 2022)
+A repository for school's Database course. (Spring 2022)</br>
+This project is a "Custom PC Vendor" database design project.
 
 This project consists of:
 - Database requirement & analysis
